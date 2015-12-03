@@ -32,12 +32,13 @@ How to expose ESB:
                   http://server_Z:8280/integra/tasks
                   http://server_Z:8280/integra/tasks
                   
-            ESB settings      
+          ESB settings      
                   context               /integra
                   resource 
                         simple:
                             resource 001 :      /tasks*             GET POST  - not ideal
-                        more detailed and illlustrates more the purpose of API-resources
+                        detailed:
+                            *and illlustrates more the purpose of API-resources
                             resource 001 :      /tasks              GET,POST
                             resource 002 :      /tasks/completed    GET
 
