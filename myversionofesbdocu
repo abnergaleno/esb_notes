@@ -4,10 +4,15 @@ How to expose ESB:
 
   Proxies
     - probably well suited for WSDL(soap) esb-front <--> REST back-end
-        - routing to REST backend can be done using SWITCH mediator,
-          evaluating the soap action [expression : get-property('Action')] in the soap header
-          
-        - wsdl-2 (old name for wsdl-2 is wsdl-1.2)
+        - wsdl 1 :  
+                    * more probable
+                    routing to REST backend can be done using SWITCH mediator,
+                    evaluating the soap action [expression : get-property('Action')] in the soap header
+                    
+        - wsdl-2 :  
+                    not tested
+                    (old name for wsdl-2 is wsdl-1.2)
+                    use the http binding to connect directly to REST 
   API
     - useful for grouping disparate^[change-term?] resources
 
