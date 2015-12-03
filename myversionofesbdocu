@@ -23,25 +23,28 @@ How to expose ESB:
           
           Assumptions :
                 actual server url addresses [1 or more domains (server-names)]
-                  http://server_A.com:8080/tasks             --  [detailed]  listing of 'all' tasks
-                  http://server_A.com:8080/tasks/completed   --  [simple]    listing of 'completed' tasks
-                  http://server_B.com:8080/users             --  [detailed]  listing of 'all' users
-                  http://server_B.com:8080/users/admin       --  [simple]    listing of 'admin' users
+                  http://server_APP01.com:8080/tasks             --  [detailed]  listing of 'all' tasks
+                  http://server_APP01.com:8080/tasks/completed   --  [simple]    listing of 'completed' tasks
+                  http://server_APP02.com:8080/users             --  [detailed]  listing of 'all' users
+                  http://server_APP02.com:8080/users/admin       --  [simple]    listing of 'admin' users
                   
                 Ideal [single-domain] esb.front REST urls to be designed in ESB-API  
-                  http://server_Z:8280/integra/tasks
-                  http://server_Z:8280/integra/tasks
-                  
+                  http://server_ESB:8280/integra/tasks
+                  http://server_ESB:8280/integra/tasks/completed
+                  http://server_ESB:8280/integra/users
+                  http://server_ESB:8280/integra/users/admin
           ESB settings      
                   context               /integra
                   resource 
                         simple:
-                            resource 001 :      /tasks*             GET POST  - not ideal
+                            resource A.001 :      /tasks*             GET POST  - not ideal
+                            resource B.001 :      /users*             GET POST  - not ideal
                         detailed:
                             *and illlustrates more the purpose of API-resources
-                            resource 001 :      /tasks              GET,POST
-                            resource 002 :      /tasks/completed    GET
-
+                            resource A.001 :      /tasks              GET,POST
+                            resource A.002 :      /tasks/completed    GET ony
+                            resource B.001 :      /users              GET,POST
+                            resource B.002 :      /users/admin        GET only
 
 Properties on ESB
   Definitions
