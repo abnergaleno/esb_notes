@@ -10,6 +10,8 @@ A) ESB syntax
         localhost:8280/integra/tasks/ - will result to server 'not found' error
 
   - not coding <send/> in the out-sequence might case payload not to be send to the client/user
+  - call mediator will only send a request but the esb will not wait for the response
+    send mediator has to be used to send the payload to the client/user
 
 
 
