@@ -1,1 +1,23 @@
 
+
+How to expose ESB:
+
+  Proxies
+    - probably well suited for WSDL(soap) esb-front <--> REST back-end
+        - routing to REST backend can be done using SWITCH mediator,
+          evaluating the soap action [expression : get-property('Action')] in the soap header
+          
+        - wsdl-2 (old name for wsdl-2 is wsdl-1.2)
+  API
+    - useful for grouping disparate^[change-term?] resources
+
+Properties on ESB
+  Definitions
+  
+  Scopes
+    Synapse   - accessible both in and out sequences
+                  example :   payload mediator set in in sequence will be accessible in out sequence 
+    Axis*     - property / payload will lives only in 'IN sequence' or 'OUT sequence'
+    
+                
+
