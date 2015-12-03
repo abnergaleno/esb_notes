@@ -3,18 +3,44 @@
 How to expose ESB:
 
   Proxies
-    - probably well suited for WSDL(soap) esb-front <--> REST back-end
+    - probably well suited for WSDL(soap) esb.front <--> REST esb.back-end
         - wsdl 1 :  
-                    * more probable
+                    * more probable in integra project since we will use wsdl-1
                     routing to REST backend can be done using SWITCH mediator,
                     evaluating the soap action [expression : get-property('Action')] in the soap header
                     
         - wsdl-2 :  
-                    not tested
+                    * not tested
                     (old name for wsdl-2 is wsdl-1.2)
                     use the http binding to connect directly to REST 
   API
     - useful for grouping disparate^[change-term?] resources
+      context   : - first sub-url in after server:port/
+                  - independent of the url patterns in the endpoint
+      resource  : - the next actually-existing sub url-resource after the endpoint specified
+        
+        example:
+          
+          Assumptions :
+                actual server url addresses [1 or more domains (server-names)]
+                  http://server_A.com:8080/tasks             --  [detailed]  listing of 'all' tasks
+                  http://server_A.com:8080/tasks/completed   --  [simple]    listing of 'completed' tasks
+                  http://server_B.com:8080/users             --  [detailed]  listing of 'all' users
+                  http://server_B.com:8080/users/admin       --  [simple]    listing of 'admin' users
+                  
+                Ideal [single-domain] esb.front REST urls to be designed in ESB-API  
+                  http://server_Z:8280/integra/tasks
+                  http://server_Z:8280/integra/tasks
+                  
+            ESB settings      
+                  context               /integra
+                  resource 
+                        simple:
+                            resource 001 :      /tasks*             GET POST  - not ideal
+                        more detailed and illlustrates more the purpose of API-resources
+                            resource 001 :      /tasks              GET,POST
+                            resource 002 :      /tasks/completed    GET
+
 
 Properties on ESB
   Definitions
