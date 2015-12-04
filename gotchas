@@ -13,7 +13,9 @@ A) ESB syntax
   - call mediator will only send a request but the esb will not wait for the response
     send mediator has to be used to send the payload to the client/user
 
-
+  - API
+    - 
+  
 
 B) Developer Studio
 
