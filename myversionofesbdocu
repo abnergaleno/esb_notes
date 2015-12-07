@@ -18,8 +18,12 @@ Service Bus [ESB Features]
               
       Generic Propert(ies)
         1. messageType
-              - should be in the outsequence... case-insensitive as long as value in('application/json','applicaiton/xml','text/json','text/xml')
-              - should not be in the in-sequence
+              - should be in the outsequence... case-insensitive as long as value in('application/json','application/xml','text/json','text/xml')
+                  - invalid value="" will default to xml-format
+                  - lack of forward-salsh character renders this property not effective
+              - should not be in the in-sequence else there will be no effect to the output-response-format
+              - scope should be "axis2", if scope is default "synapse" this property has no effect
+
 
 
 How to expose ESB:
