@@ -15,7 +15,7 @@ How to expose ESB:
                     use the http binding to connect directly to REST 
   API
     - useful for grouping disparate^[change-term?] resources
-      context   : - first sub-url in after server:port/
+      context   : - first sub-url after server:port/
                   - independent of the url patterns in the endpoint
       resource  : - the next actually-existing sub url-resource after the endpoint specified
         
@@ -45,6 +45,25 @@ How to expose ESB:
                             resource A.002 :      /tasks/completed    GET ony
                             resource B.001 :      /users              GET,POST
                             resource B.002 :      /users/admin        GET only
+    
+    
+    URL-style:
+      a. URL-template
+          design            : localhost:8280/integra/status/{orderId}
+          actual url called : localhost:8280/integra/status/1
+          
+          ??? this can be combined with ?queryParams=value ???URL_POSTFIX??? 
+          
+          
+      b. URL-mapping
+          desired matches : /test/*
+      
+          * combining url-mapping with ?queryParams=value seems to be not allowed...
+            when the url entered satisfies both /{mappedSubUrl} and ?parameter... 
+            ... properties below will be null/blank:
+                  get-property('uri.var.taskid')
+                  get-property('query.param.searchstr')
+      
 
 Properties on ESB
   Definitions
