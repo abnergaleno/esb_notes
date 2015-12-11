@@ -28,6 +28,8 @@ Service Bus [ESB Features]
                 
               * setting clone=true seems to have no difference on the output
                   - seems to better called 'clonable' 
+              * envelope, body etc. can be only accessed if the payload/etc. is SOAP
+                  - no equivalent for non-SOAP messages, accessing SOAP tag will just result to error or just a tag with no content
           
           
           
