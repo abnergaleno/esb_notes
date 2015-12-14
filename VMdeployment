@@ -1,0 +1,19 @@
+Create VMs
+
+  trystack.com
+        - requires joining fb page https://www.facebook.com/groups/269238013145112/
+        - sign-up at trystack.org
+
+      * easy-guide : https://edwardsamuel.wordpress.com/2014/10/25/tutorial-creating-openstack-instance-in-trystack/
+
+download applications to VM: 
+
+    1) JRE 1.7        : wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jre-7u79-linux-i586.tar.gz
+    2) WSO2 ESB 4.9.0 : https://s3-ap-northeast-1.amazonaws.com/edcintegraesb/installers/wso2esb-4.9.0.zip
+                        
+                        
+        * some files have to be uploaded to a server without any credential-check for easy wget on any VM
+        
+        
+        
+        
