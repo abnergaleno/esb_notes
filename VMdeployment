@@ -1,5 +1,18 @@
 usual password : Seer806*)^
 
+
+Create database 
+  Amazon RDS - Free Tier
+  
+      DB Engine Version : 9.3.10
+      DB instance       : 
+  
+      DB Instance Identifier    : instdbedcintegra
+      Master Username           : postgres
+      Master Password           : same as username
+      Database Name             : dbedcintegrace class : db.t2.micro 1vCPU 1GiB RAM
+
+
 Create VMs
 
   trystack.com
