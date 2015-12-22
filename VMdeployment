@@ -13,6 +13,15 @@ Create database
       Database Name             : dbedcintegrace class : db.t2.micro 1vCPU 1GiB RAM
 
 
+Add entry to file:     /etc/hosts
+    
+      192.168.99.1    vboxhostos
+      128.136.179.83  tsvmesb.com_disallocatedip
+      128.136.179.224 tsvm.org
+      52.192.247.89   awsvmESB.host
+      52.192.44.20    awsvmAPP.host
+
+
 Create VMs
 
   Amazon EC2 : 
@@ -65,6 +74,5 @@ download/install applications to VM:
                         
                         
         * some files have to be uploaded to a server without any credential-check for easy wget on any VM
-        
         
         
