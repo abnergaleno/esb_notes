@@ -57,10 +57,10 @@ How to expose ESB:
         - wsdl-2 :  
                     * not tested
                     (old name for wsdl-2 is wsdl-1.2)
-                    use the http binding to connect directly to REST 
+                    use the new http binding feature to connect directly to REST 
   API
     - useful for grouping disparate^[change-term?] resources
-      context   : - first sub-url after server:port/
+      context   : - first sub-url after server:port/, like 'tasks' at the end of 'jsonserver.org:80/tasks'
                   - independent of the url patterns in the endpoint
       resource  : - the next actually-existing sub url-resource after the endpoint specified
         
@@ -69,11 +69,12 @@ How to expose ESB:
           Assumptions :
                 actual server url addresses [1 or more domains (server-names)]
                   http://server_APP01.com:8080/tasks             --  [detailed]  listing of 'all' tasks
-                  http://server_APP01.com:8080/tasks/completed   --  [simple]    listing of 'completed' tasks
+                  http://server_APP01.com:8080/tasks/completed   --  [simple]    listing of 'completed' tasks only
                   http://server_APP02.com:8080/users             --  [detailed]  listing of 'all' users
-                  http://server_APP02.com:8080/users/admin       --  [simple]    listing of 'admin' users
+                  http://server_APP02.com:8080/users/admin       --  [simple]    listing of 'admin' users only
                   
                 Ideal [single-domain] esb.front REST urls to be designed in ESB-API  
+                     servers server_APP01 and server_APP02 were combined
                   http://server_ESB:8280/integra/tasks
                   http://server_ESB:8280/integra/tasks/completed
                   http://server_ESB:8280/integra/users
@@ -85,6 +86,8 @@ How to expose ESB:
                         simple:
                             resource A.001 :      /tasks*             GET POST  - not ideal
                             resource B.001 :      /users*             GET POST  - not ideal
+                               - asterisk will cause the pattern to match other combinations 
+                                 it will function as catch all default
                         detailed:
                             *and illlustrates more the purpose of API-resources
                             resource A.001 :      /tasks              GET,POST
