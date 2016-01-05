@@ -6,12 +6,12 @@ A) ESB syntax
       trailing foward slashes might cause error 'not found' on servers (like tomcat)
     
       example:
-        localhost:8280/integra/tasks  - wont result to error when using [default settings] of tomcat
-        localhost:8280/integra/tasks/ - will result to server 'not found' error
+        localhost:8280/integra/tasks  - wont result to error
+        localhost:8280/integra/tasks/ - will result to server 'not found' error,  when using [default settings] of tomcat
 
   - not coding <send/> in the out-sequence might case payload not to be send to the client/user
   - call mediator will only send a request but the esb will not wait for the response
-    send mediator has to be used to send the payload to the client/user
+    send mediator has to be used to send the payload back to the client/user
 
   - API
     - 
@@ -21,7 +21,7 @@ B) Developer Studio
 
   1.  dev-studio will generate <out/> even when there are no mediators specified for the out-sequence
       <out/> will cause failure of sending payload to the cilent/user
-      add a send mediator </out> <send/> </out> to fix
+      add a send mediator inside </out> <send/> </out> to fix
 
 
 
