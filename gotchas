@@ -23,8 +23,11 @@ B) Developer Studio
       <out/> will cause failure of sending payload to the cilent/user
       add a send mediator inside </out> <send/> </out> to fix
 
+C) WSO server
 
-
+  1. ESB_HOME/repository/conf/user-mgt.xml is only read at first server run
+      - it seems the value from the xml is stored at the db, user-mgt.xml is never read again 
+      - user 'admin' can be easily configured (password can be changed) through the 'web mgt console' anyway
 
 
 
