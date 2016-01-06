@@ -2,9 +2,14 @@
 2015.Jan.06
 
   1) Getting authentication error : 
+      
+      trigger : 
+        when redploying CAR to ESB server
+  
       steps that resulted to error : 
         - changed /user-mgt.xml, changed password of admin from 'admin' to 'Seer806*)^'
         - accordingly updated pom.xml password
+        
       error : 
               
               [2016-01-06 14:23:03,527]  INFO - CarbonAuthenticationUtil 'admin@carbon.super [-1234]' logged in at [2016-01-06 14:23:03,527+0800]
