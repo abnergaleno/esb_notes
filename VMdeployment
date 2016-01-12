@@ -13,7 +13,7 @@ Create database
       Database Name             : dbedcintegrace class : db.t2.micro 1vCPU 1GiB RAM
 
 
-Add entry to file:     /etc/hosts
+Add entry to file:     /etc/hosts  [optional - for convenience]
     
       192.168.99.1    vboxhostos
       128.136.179.83  tsvmesb.com_disallocatedip
@@ -25,7 +25,10 @@ Add entry to file:     /etc/hosts
 Create VMs
 
   Amazon EC2 : 
-      EC2 instance created : i-cba0d36e 
+      EC2 instance:
+      
+            awsESB ec2-52-192-126-216.ap-northeast-1.compute.amazonaws.com
+            awsAPP ec2-52-193-40-88.ap-northeast-1.compute.amazonaws.com
       
       
       
