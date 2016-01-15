@@ -1,31 +1,28 @@
-  
-2015.Jan.06
 
-  1) Getting authentication error : 
+LOGS :
       
-      trigger : 
-        when redploying CAR to ESB server
-  
-      steps that resulted to error : 
-        - changed /user-mgt.xml, changed password of admin from 'admin' to 'Seer806*)^'
-        - accordingly updated pom.xml password
-        
-      error : 
-              
-              [2016-01-06 14:23:03,527]  INFO - CarbonAuthenticationUtil 'admin@carbon.super [-1234]' logged in at [2016-01-06 14:23:03,527+0800]
-              [2016-01-06 14:23:23,712]  WARN - CarbonAuthenticationUtil Failed Administrator login attempt 'admin[-1234]' at [2016-01-06 14:23:23,712+0800]
-              [2016-01-06 14:23:23,934]  WARN - AuthenticationHandler Illegal access attempt at [2016-01-06 14:23:23,0934] from IP address 127.0.0.1 while trying to authenticate access to service CarbonAppUploader
-      changes done not resulted to fix :
-        changed pom.xml for CAR
-                  <build> <plugins> <plugin> 
-                    ...
-                    <groupId>org.wso2.maven</groupId>
-                    <artifactId>maven-car-deploy-plugin</artifactId>
-                      <configuration>
-                        <carbonServers>
-                          <CarbonServer>  
-                            ...
-                            <serverUrl>https://localhost:9443</serverUrl>
-                            <userName>admin</userName>
-                            <password>Seer806*)^</password>
-                            <operation>deploy</operation>
+    2015.Jan.06
+    
+      1) Getting authentication error : 
+          
+          cause : changing admin password in user-mgt.xml  will be only effective before the esb-server is initially started
+                  subsequent changes to the password would have to be done in the web-management-console
+                  (it seems esb readsd/writes the password in its light/internal db)
+          
+          trigger : 
+            when redeploying CAR to ESB server
+      
+          steps that resulted to error : 
+            - changed /user-mgt.xml, changed password of admin from 'admin' to 'Seer806*)^'
+            - accordingly updated pom.xml password
+            
+          error : 
+                  
+                  [2016-01-06 14:23:03,527]  INFO - CarbonAuthenticationUtil 'admin@carbon.super [-1234]' logged in at [2016-01-06 14:23:03,527+0800]
+                  [2016-01-06 14:23:23,712]  WARN - CarbonAuthenticationUtil Failed Administrator login attempt 'admin[-1234]' at [2016-01-06 14:23:23,712+0800]
+                  [2016-01-06 14:23:23,934]  WARN - AuthenticationHandler Illegal access attempt at [2016-01-06 14:23:23,0934] from IP address 127.0.0.1 while trying to authenticate access to service CarbonAppUploader
+          changes done not resulted to fix :
+            changed pom.xml for CAR
+                      <build> <plugins> <plugin> 
+                      
+          
