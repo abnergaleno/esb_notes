@@ -1,0 +1,12 @@
+    
+QUESTIONS :    
+    
+    re: git
+        - no branches
+        - commit directly to master branch ?
+
+    re: IntegraESB project
+        - prefix API names with module-code like GlTaskService instead of TaskService
+          to easily find modules
+          
+          
