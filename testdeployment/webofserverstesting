@@ -17,3 +17,21 @@ Server Background :
     - update the file /etc/hosts, else you will not get proper response(s)
     
     
+    Wavemaker 7.8  samples : 
+    
+        GET
+            - by ID
+            
+            - by search
+            
+                Request URL:http://vmapp.aws:8080/integraweb02/services/edcintegra02/ZgrglGeohazardDataT/search?page=1&size=20&sort=
+                Payload : 
+                            - search projection
+                                    [{"attributeName":"zprojectionC","attributeValue":"proj","attributeType":"STRING","filterCondition":"CONTAINING"}]
+                            - search datum
+                                    [{"attributeName":"zdatumC","attributeValue":"dat","attributeType":"STRING","filterCondition":"CONTAINING"}]
+        POST
+            Request URL:    http://vmapp.aws:8080/integraweb02/services/edcintegra02/ZgrglGeohazardDataT/
+            Content-Type:   application/json;charset=UTF-8
+            Payload : 
+                            {"zcampaignIdC":1,"zstatusIdC":1,"zpadIdC":1,"zcellarIdC":1,"zsectorIdC":1,"zprojectIdC":1,"zinspectedByC":1,"zcollectedDateT":1453204200000,"zgeohazardSiteC":"[geo hazard site 003 ]","zlocalityC":"[locality 003]","zsubLocalityC":"[sublocality 003]","zdatumC":"[datum 003]","zprojectionC":"[projection 003]","zeastingMapK":1,"znorthingMapK":1,"zelevationMapK":1,"zeastingGpsK":1,"zelevationGpsK":1,"znorthingGpsK":1,"zgpsReferenceWaypointpointK":1,"zsiteDesctiption":"1","zflagsK":1}
