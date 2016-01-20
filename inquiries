@@ -2,11 +2,24 @@
 QUESTIONS :    
     
     re: git
-        - no branches
-        - commit directly to master branch ?
+        - no branches                                   - yes for now
+        - commit directly to master branch ?            - yes for now 
+
+    re: IntegraESB project
+        - if no transformation is needed, do we need to store url chunks in properties and then re-pass them
+            * html request url and body seems to be intact when passing through ESB-server
+        - do we need to also specify the url mappings in the ESB ?
+            if we need to specify every
+                                            /obsv-pts/1/photos
+                                            /obsv-pts/1/outcrops
+                                            /obsv-pts/1/_________
+            ... it could mean any API access won't be available until the ESB is also updated
+          
+
+
+probable suggestions:          
 
     re: IntegraESB project
         - prefix API names with module-code like GlTaskService instead of TaskService
-          to easily find modules
-          
-          
+            to easily sort API [by modules]
+        - 
