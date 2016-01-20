@@ -3,15 +3,22 @@ usual password : Seer806*)^
 
 Create database 
   Amazon RDS - Free Tier
-  
-      DB Engine Version : 9.3.10
-      DB instance       : 
-  
-      DB Instance Identifier    : instdbedcintegra
-      Master Username           : postgres
-      Master Password           : same as username
-      Database Name             : dbedcintegrace class : db.t2.micro 1vCPU 1GiB RAM
+          * NOT CURRENTLY UTITILIZED, not familiair with amazon rds
+              DB Engine Version : 9.3.10
+              DB instance       : 
+          
+              DB Instance Identifier    : instdbedcintegra
+              Master Username           : postgres
+              Master Password           : same as username
+              Database Name             : dbedcintegrace class : db.t2.micro 1vCPU 1GiB RAM
 
+        vmAPP.aws
+            - includes postgresql
+            - has wavemaker 7.8
+            
+                services
+                    database 
+                        imported tables : zgrgl_geohazard_data_t,zgrgl_geohazard_photo_t,zgrgl_observation_point_t
 
 Add entry to file:     /etc/hosts  [optional - for convenience]
     
