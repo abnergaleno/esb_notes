@@ -14,7 +14,9 @@ Create database
 
         vmAPP.aws
             - includes postgresql
-            - has wavemaker 7.8
+            - has wavemaker 7.8 for RapidMockApplication Development
+                direct download : http://www.wavemaker.com/downloads/studio-desktop/7.8.0/wavemaker-studio-desktop-installer-7.8.0.jar
+                                  from http://www.wavemaker.com/pricing/, under "Wavemaker Community Edition"
             
                 services
                     database 
@@ -22,11 +24,10 @@ Create database
 
 Add entry to file:     /etc/hosts  [optional - for convenience]
     
-      192.168.99.1    vboxhostos
-      128.136.179.83  tsvmesb.com_disallocatedip
-      128.136.179.224 tsvm.org
-      52.192.247.89   awsvmESB.host
-      52.192.44.20    awsvmAPP.host
+      vboxhostos
+      tsvm.org
+      xxx.xxx.xxx.xxx awsvmESB.host
+      xxx.xxx.xxx.xxx awsvmAPP.host
 
 
 Create VMs
@@ -34,8 +35,8 @@ Create VMs
   Amazon EC2 : 
       EC2 instance:
       
-            awsESB ec2-52-192-126-216.ap-northeast-1.compute.amazonaws.com
-            awsAPP ec2-52-193-40-88.ap-northeast-1.compute.amazonaws.com
+            awsESB ec2-xxx-xxx-xxx-xxx.ap-northeast-1.compute.amazonaws.com
+            awsAPP ec2-xxx-xxx-xxx-xxx.ap-northeast-1.compute.amazonaws.com
       
       
       
