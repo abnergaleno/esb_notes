@@ -30,6 +30,9 @@ A) ESB syntax
         
         ex 01 : if resource is /pizza won't catch /pizzas?flavor=cheese
         ex 02 : if resource is /pizza* will catch /pizzas?flavor=cheese
+        
+    - resource with url-mapping will still be able to get the query parameter (using 'get-property('query.param.xxx'))
+        - get-property('uri.var.xxx') wont work though 
 
 B) Developer Studio
 
