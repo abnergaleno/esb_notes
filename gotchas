@@ -1,6 +1,11 @@
 
 A) ESB syntax
 
+  - always take note of the scope of the mediator 
+      mainly used are 'synapse' and 'axis2'
+      
+      if you set a property and it seems to not take effect, setting the scope to axis2 usually fixes it
+
   - endpoints [outgoing requests to back-end]
     - property 'REST_URL_POSTFIX' must be set to 'remove' to avoid trailing [forward] slash
       trailing foward slashes might cause error 'not found' on servers (like tomcat)
@@ -16,10 +21,15 @@ A) ESB syntax
     send mediator has to be used to send the payload back to the client/user
 
   - API
-    - url-mapping will accept the specified pattern *plus* any query appended (just like specifying * but it won't allow f-slashes)
-      if resource is /pizza, it will still catch /pizzas?flavor=cheese but not /pizzas/flavors
-      (this seems to not apply to uri-template)
-  
+    - url-mapping resource patterns without asterisk will also accept query-parameters postfixed to it 
+       (just like specifying * but it won't allow forward-slashes)
+        
+        ex: if resource is /pizza, it will still catch /pizzas?flavor=cheese but not /pizzas/flavors
+        
+    - uri-template resource patterns without asterisk will not accept query-parameters postfixed to it
+        
+        ex 01 : if resource is /pizza won't catch /pizzas?flavor=cheese
+        ex 02 : if resource is /pizza* will catch /pizzas?flavor=cheese
 
 B) Developer Studio
 
@@ -28,17 +38,18 @@ B) Developer Studio
       add a send mediator inside </out> <send/> </out> to fix
         - if this does not work try to add add log-mediator, then save+deploy, then just delete the log mediator back
         - [ could be just a redeploy lag though ]
+  
 
   2.  DevStudio will not explicitly notify about errors when editing in XML-sourcecode.
       The source will be silently corrected/reverted which will result to the code with missing changes to be deployed to the server instead.
       
       To catch errors, switch between design view and source view and look for codes corrected by dev-studio
-
+      To test the deployment, look at the codes deployed to the server using the web-mgmt-console (web-ui)
 
 C) WSO server
 
   1. ESB_HOME/repository/conf/user-mgt.xml is only read at first server run
-      - it seems the value from the xml is stored at the db, user-mgt.xml is never read again 
+      - it seems the value from the xml is stored at the db, then user-mgt.xml is never read again 
       - user 'admin' can be easily configured (password can be changed) through the 'web mgt console' anyway
 
 
