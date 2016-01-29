@@ -1,9 +1,11 @@
 
 A) ESB syntax
 
-  - endpoints
+  - endpoints [outgoing requests to back-end]
     - property 'REST_URL_POSTFIX' must be set to 'remove' to avoid trailing [forward] slash
       trailing foward slashes might cause error 'not found' on servers (like tomcat)
+        (this is probably because those url ending in forward-slash are treated [diffently] as a resource per RFCxxxx)
+        (ESB however, will handle incoming requests gracefully witht or without forward slash)
     
       example:
         localhost:8280/integra/tasks  - wont result to error
@@ -14,7 +16,9 @@ A) ESB syntax
     send mediator has to be used to send the payload back to the client/user
 
   - API
-    - 
+    - url-mapping will accept the specified pattern *plus* any query appended (just like specifying * but it won't allow f-slashes)
+      if resource is /pizza, it will still catch /pizzas?flavor=cheese but not /pizzas/flavors
+      (this seems to not apply to uri-template)
   
 
 B) Developer Studio
@@ -22,6 +26,14 @@ B) Developer Studio
   1.  dev-studio will generate <out/> even when there are no mediators specified for the out-sequence
       <out/> will cause failure of sending payload to the cilent/user
       add a send mediator inside </out> <send/> </out> to fix
+        - if this does not work try to add add log-mediator, then save+deploy, then just delete the log mediator back
+        - [ could be just a redeploy lag though ]
+
+  2.  DevStudio will not explicitly notify about errors when editing in XML-sourcecode.
+      The source will be silently corrected/reverted which will result to the code with missing changes to be deployed to the server instead.
+      
+      To catch errors, switch between design view and source view and look for codes corrected by dev-studio
+
 
 C) WSO server
 
