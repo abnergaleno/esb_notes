@@ -123,4 +123,19 @@ Properties on ESB
     Axis*     - property / payload will lives only in 'IN sequence' or 'OUT sequence'
     
                 
+Deployment : 
 
+    Ways to start the ESB server : 
+        (1) run /bin/wso2server.sh
+              - logs will be on the terminal
+        (2) add a [local] server on DeveloperStudio
+              - logs will be on the DeveloperStudio terminal
+        (3) add a [remote] server on DeveloperStudio
+              - logs will be on the DeveloperStudio terminal
+      
+    Ways to deploy CAR (Carbon Applications)  
+        (1) right click the CAR under the server tab on Developer Studio and click 'Deploy'
+        (2) copy the .car file to the server folder CARBON_HOME/repository/../deployment/../server/carbonapps/
+              -  Carbon will detect the new file in the file-system folder /carbonapps/ then deploy the files inside
+              - deleting the .car file will also cause the previously deployed contents to be deleted as well
+              
