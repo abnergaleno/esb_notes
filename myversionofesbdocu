@@ -136,6 +136,7 @@ Deployment :
     Ways to deploy CAR (Carbon Applications)  
         (1) right click the CAR under the server tab on Developer Studio and click 'Deploy'
         (2) copy the .car file to the server folder CARBON_HOME/repository/../deployment/../server/carbonapps/
+                     esb/esb490/repository/deployment/server/carbonapps
               -  Carbon will detect the new file in the file-system folder /carbonapps/ then deploy the files inside
               - deleting the .car file will also cause the previously deployed contents to be deleted as well
               
